@@ -54,7 +54,11 @@ function Home() {
               Forgot Password
             </div>
           </div>
-          <div className="button" style={{ cursor: "pointer" }}>
+          <div
+            className="button"
+            style={{ cursor: "pointer" }}
+            onClick={() => history.push("/dashboard")}
+          >
             <div className="button-text-white">Login</div>
           </div>
           <div
