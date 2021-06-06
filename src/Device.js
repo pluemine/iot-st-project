@@ -33,6 +33,7 @@ import StatusLightCard from "./components/StatusLightCard";
 import StatusPropCard from "./components/StatusPropCard";
 import StatusSliderCard from "./components/StatusSliderCard";
 import Navbar from "./components/Navbar";
+import Line from "./components/Line";
 
 function Device() {
   const history = useHistory();
@@ -99,7 +100,13 @@ function Device() {
   }
 
   let screen;
-  if (select === "realtime") {
+  if (select === "historical") {
+    screen = (
+      <div className="data-card">
+        <Line />
+      </div>
+    );
+  } else if (select === "realtime") {
     screen = (
       <div className="data-card">
         <div className="row">

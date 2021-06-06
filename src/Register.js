@@ -1,12 +1,14 @@
 import "./App.css";
 import { useHistory } from "react-router-dom";
 import "./components/Main.css";
-import { TextField, Checkbox } from "@material-ui/core";
+import { TextField, Checkbox, IconButton } from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
 import EnhancedEncryptionIcon from "@material-ui/icons/EnhancedEncryption";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HowToRegIcon from "@material-ui/icons/HowToReg";
 
 function Register() {
   const history = useHistory();
@@ -126,7 +128,7 @@ function Register() {
               <div className="text-option">I have read and agree to the Terms and Conditions</div>
             </div>
           </div>
-          <div className="button" style={{ cursor: "pointer" }}>
+          {/*<div className="button" style={{ cursor: "pointer" }}>
             <div className="button-text-white">Register</div>
           </div>
           <div
@@ -135,7 +137,32 @@ function Register() {
             style={{ cursor: "pointer" }}
           >
             <div className="button-text">Back</div>
-          </div>
+            </div>*/}
+          {<div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <IconButton
+              className="button-circle"
+              onClick={() => history.replace("/")}
+            >
+              <ArrowBackIcon />
+            </IconButton>
+            <IconButton
+              className="button-circle"
+              style={
+                true ? { background: "#53700d" } : { background: "#cccccc" }
+              }
+              disabled={false}
+              onClick={() => history.push("/dashboard")}
+            >
+              <HowToRegIcon style={{ color: "#ffffff" }} />
+            </IconButton>
+            </div>}
         </div>
       </div>
     </div>

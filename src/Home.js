@@ -1,9 +1,23 @@
 import "./App.css";
 import { useHistory } from "react-router-dom";
 import "./components/Main.css";
-import { TextField } from "@material-ui/core";
+import {
+  TextField,
+  Tabs,
+  Tab,
+  Select,
+  MenuItem,
+  LinearProgress,
+  Switch,
+  Button,
+  Slider,
+  IconButton,
+} from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import LockIcon from "@material-ui/icons/Lock";
+import NoEncryptionIcon from "@material-ui/icons/NoEncryption";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 function Home() {
   const history = useHistory();
@@ -45,7 +59,7 @@ function Home() {
               />
             </div>
           </div>
-          <div className="space-text">
+          {/*<div className="space-text">
             <div
               className="text-option"
               onClick={() => history.push("/forgotpassword")}
@@ -53,8 +67,8 @@ function Home() {
             >
               Forgot Password
             </div>
-          </div>
-          <div
+            </div>*/}
+          {/*<div
             className="button"
             style={{ cursor: "pointer" }}
             onClick={() => history.push("/dashboard")}
@@ -67,6 +81,40 @@ function Home() {
             style={{ cursor: "pointer" }}
           >
             <div className="button-text">Register</div>
+          </div>*/}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: "32px",
+            }}
+          >
+            <div className="button-circle-multi">
+              <IconButton
+                className="button-circle-multi-block"
+                onClick={() => history.push("/register")}
+              >
+                <PersonAddIcon />
+              </IconButton>
+              <IconButton
+                className="button-circle-multi-block"
+                onClick={() => history.push("/forgotpassword")}
+              >
+                <NoEncryptionIcon />
+              </IconButton>
+            </div>
+            <IconButton
+              className="button-circle"
+              style={
+                true ? { background: "#53700d" } : { background: "#cccccc" }
+              }
+              disabled={false}
+              onClick={() => history.push("/dashboard")}
+            >
+              <ArrowForwardIcon style={{ color: "#ffffff" }} />
+            </IconButton>
           </div>
         </div>
       </div>
